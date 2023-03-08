@@ -1,3 +1,6 @@
+'use strict'
+
+
 function Employee(employeeId,fullName,department,level,imageUrl,salary) {
     this.employeeId=employeeId;
     this.fullName=fullName;
