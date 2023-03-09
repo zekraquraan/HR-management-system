@@ -1,6 +1,7 @@
 'use strict'
 
 //employee
+const allEmployees=[];
 function Employee(employeeId,fullName,department,level,imageUrl,salary) {
     this.employeeId=employeeId;
     this.fullName=fullName;
@@ -8,38 +9,34 @@ function Employee(employeeId,fullName,department,level,imageUrl,salary) {
     this.level=level;
     this.imageUrl=imageUrl;
     this.salary=0;
-   
+   allEmployees.push(this);
 }
 Employee.prototype.randomSalary=function () {
     console.log(this);
    
     if(this.level=="Junior"){
        
-        this.salary=Math.floor(Math.random() * (1000 - 500) ) + 500;
+        this.salary=randomNumber(500,1000);
         
-
-console.log(this.salary);
     }
     else if(this.level=="Mid-Senior"){
-        this.salary=Math.floor(Math.random() * (1500- 1000) ) + 1000;
-console.log(this.salary);
-    }
-    else if(this.level=="Senior"){
+        this.salary=randomNumber(1000,1500);
         
-        this.salary=Math.floor(Math.random() * (2000- 1500) ) + 1500;
-    
-console.log(this.salary);
     }
+    else if (this.level=="Senior"){
+        
+        this.salary=randomNumber(1500,2000);
+
+    }
+    this.salary=netSalary(this.salary);
   }
-  Employee.prototype.netSalary=function (){
-    
-    (this.salary=this.salary*(1-.075));
-   console.log(this.salary);
-  }
+ 
   Employee.prototype.render=function(){
-console.log(`employeeName is ${this.fullName},${this.salary}`);
+document.write(`<h3>employeeName is ${this.fullName},${this.salary}</h3>`);
 
   }
+
+
 let employee1 =new Employee(1000,"Ghazi Samer","Administration","Senior");
 let employee2=new Employee(1001,"Lana Ali","Finance","Senior");
 let employee3=new Employee(1002,"Tamara Ayoub","Marketing","Senior");
@@ -47,26 +44,18 @@ let employee4=new Employee(1003,"Safi Walid","Administration","Mid-Senior");
 let employee5=new Employee(1004,"Omar Zaid","Development","	Senior");
 let employee6=new Employee(1005,"Rana Saleh","Development","Junior");
 let employee7=new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior");
-//console.log(employee1);
 
-employee1.randomSalary();
-employee1.netSalary();
-employee2.randomSalary();
-employee2.netSalary();
-employee3.randomSalary();
-employee3.netSalary();
-employee4.randomSalary();
-employee4.netSalary();
-employee5.randomSalary();
-employee5.netSalary();
-employee6.randomSalary();
-employee6.netSalary();
-employee7.randomSalary();
-employee7.netSalary();
-employee1.render();
-employee2.render();
-employee3.render();
-employee4.render();
-employee5.render();
-employee6.render();
-employee7.render();
+console.log(allEmployees);
+methodCaller(allEmployees);
+function randomNumber(min,max) {
+  return Math.floor(Math.random()*(max-min))+min;
+}
+function netSalary(salary){
+return salary-(salary * 0.075);
+}
+function methodCaller(allEmployees){
+  for(let i=0;i<allEmployees.length;i++){
+    allEmployees[i].randomSalary();
+    allEmployees[i].render();
+   
+  }}
