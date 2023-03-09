@@ -1,6 +1,7 @@
 'use strict'
 
 //employee
+const allEmployees=[];
 function Employee(employeeId,fullName,department,level,imageUrl,salary) {
     this.employeeId=employeeId;
     this.fullName=fullName;
@@ -8,6 +9,7 @@ function Employee(employeeId,fullName,department,level,imageUrl,salary) {
     this.level=level;
     this.imageUrl=imageUrl;
     this.salary=0;
+    allEmployees.push(this);
    
 }
 Employee.prototype.randomSalary=function () {
@@ -37,7 +39,7 @@ console.log(this.salary);
    console.log(this.salary);
   }
   Employee.prototype.render=function(){
-console.log(`employeeName is ${this.fullName},${this.salary}`);
+document.write(`<h3>employeeName is ${this.fullName}, Salary: ${this.salary}</h3>`);
 
   }
 let employee1 =new Employee(1000,"Ghazi Samer","Administration","Senior");
@@ -48,25 +50,33 @@ let employee5=new Employee(1004,"Omar Zaid","Development","	Senior");
 let employee6=new Employee(1005,"Rana Saleh","Development","Junior");
 let employee7=new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior");
 //console.log(employee1);
+methodCaller(allEmployees);
 
-employee1.randomSalary();
-employee1.netSalary();
-employee2.randomSalary();
-employee2.netSalary();
-employee3.randomSalary();
-employee3.netSalary();
-employee4.randomSalary();
-employee4.netSalary();
-employee5.randomSalary();
-employee5.netSalary();
-employee6.randomSalary();
-employee6.netSalary();
-employee7.randomSalary();
-employee7.netSalary();
-employee1.render();
-employee2.render();
-employee3.render();
-employee4.render();
-employee5.render();
-employee6.render();
-employee7.render();
+// employee1.randomSalary();
+// employee1.netSalary();
+// employee2.randomSalary();
+// employee2.netSalary();
+// employee3.randomSalary();
+// employee3.netSalary();
+// employee4.randomSalary();
+// employee4.netSalary();
+// employee5.randomSalary();
+// employee5.netSalary();
+// employee6.randomSalary();
+// employee6.netSalary();
+// employee7.randomSalary();
+// employee7.netSalary();
+// employee1.render();
+// employee2.render();
+// employee3.render();
+// employee4.render();
+// employee5.render();
+// employee6.render();
+// employee7.render();
+console.log(allEmployees);
+function methodCaller(){
+for(let i=0;i<allEmployees.length;i++){
+  allEmployees[i].randomSalary();
+  allEmployees[i].render();
+ 
+}}
