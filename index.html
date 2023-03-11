@@ -1,8 +1,36 @@
-
+<link rel="stylesheet" href="card.css">
     <link rel="shortcut icon" href="#">
     <header>
 </header>
 <main>
 <script src="app.js"></script>
+<form id="f1">
+    <label for="fullName">Full Name:</label><br>
+    <input type="text" id="fullname" name="fullname"><br>
+    <label for="department">Department:</label><br>
+    <select name="department" id="department">
+        <option value="administration">Administration</option>
+        <option value="marketing">Marketing</option>
+        <option value="development">Development</option>
+        <option value="finance">Finance</option>
+      </select>
+    <label for="level">Level:</label><br>
+    <select name="level" id="level">
+        <option value="junior">Junior</option>
+        <option value="mid-Senior">Mid-Senior</option>
+        <option value="senior">Senior</option>
+      </select>
+    <label for="imgUrl">Image URL:</label><br>
+    <input type="image" id="imageurl" name="imageurl"><br>
+    <input type="submit" value="Submit">
+  </form>
+  <div class="card">
+    <img src="male.jpg" alt="Avatar" style="width:50%">
+    <div class="container">
+      <h4><b>Full Name:</b></h4> <h5>ID:</h5><br>
+      <p>Department:</p><p>Level:</p><br>
+      <p>Salary:</p>
+    </div>
+  </div>
 </main>
 <footer></footer>
