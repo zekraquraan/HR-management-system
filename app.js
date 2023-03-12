@@ -41,7 +41,7 @@ let employee1 =new Employee(1000,"Ghazi Samer","Administration","Senior");
 let employee2=new Employee(1001,"Lana Ali","Finance","Senior");
 let employee3=new Employee(1002,"Tamara Ayoub","Marketing","Senior");
 let employee4=new Employee(1003,"Safi Walid","Administration","Mid-Senior");
-let employee5=new Employee(1004,"Omar Zaid","Development","	Senior");
+let employee5=new Employee(1004,"Omar Zaid","Development","Senior");
 let employee6=new Employee(1005,"Rana Saleh","Development","Junior");
 let employee7=new Employee(1006,"Hadi Ahmad","Finance","Mid-Senior");
 
